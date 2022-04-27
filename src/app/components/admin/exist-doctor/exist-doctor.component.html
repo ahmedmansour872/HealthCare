@@ -1,0 +1,34 @@
+<app-exit></app-exit>
+
+<div class="container">
+
+  <div class="image">
+    <img src="../../../../assets/brand/logo.png"  alt="شعار كلية الظباط الاحتياط">
+  </div>
+  <h2 *ngIf="error || fullnamevalid" style="margin-top: 20px;" class="alert alert-danger text-center"> لا يوجد طبيب بهذه البيانات </h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">الاسم</th>
+        <th scope="col">الرقم العسكري</th>
+        <th scope="col">الرقم القومي</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  >
+        <td> <span class="m-1">{{doctor.fname}}</span> <span class="m-1">{{doctor.mname}}</span><span class="m-1"> {{doctor.mname2}}</span><span class="m-1"> {{doctor.lname}}</span>  </td>
+        <td >{{doctor.militaryNumber }} </td>
+        <td>{{doctor.nationalId }}</td>
+        <td>
+          <button class="btn btn-success " [disabled]="error||fullnamevalid"  routerLink="/admin/updateDoctor" [queryParams]="{doctorid:doctor.id}">  بيانات الطبيب</button>
+            <button routerLink="/clinics" [disabled]="error ||fullnamevalid" routerLink="/admin/editDoctor" [queryParams]="{doctorid:doctor.id}"  class="btn btn-primary" > تعديل  </button>
+            <button class="btn btn-danger" [disabled]="error ||fullnamevalid"  routerLink="/diseashistory" [queryParams]="{doctorid:doctor.id}"  >حذف</button>
+         </td>
+      </tr>
+
+      <tr>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+
+  <div class="logo">
+    <img src="../../../assets/brand/logo.png" alt="شعار كلية الضباط الاحتياط">
+  </div>
+
+  <div class="addDrug">
+    <form action="" #addDrug="ngForm" class="form-group">
+
+      <div>
+      <label for=""> اسم الدواء </label>
+      <input type="text first" required #drugName="ngModel" ngModel name="drugName" [(ngModel)]="drug.name"  multiple="multiple">
+      <label for=""> النوع </label>
+      <select name="drugsCate" id="gg" required    #drugCategory="ngModel" (ngModelChange)="changeVal($event)"   ngModel name="drugCategory"  >
+        <option [selected]="drug.category=='دواء شرب'" value="1" >دواء شرب</option>
+        <option [selected]="drug.category== 'اقراص'" value="2" >اقراص</option>
+        <option [selected]="drug.category=='حقن'" value="3" >حقن</option>
+        <option [selected]="drug.category=='مرهم'" value="4" > مرهم </option>
+      </select>
+
+
+
+      </div>
+
+      <label for=""> الكمية  </label>
+      <input type="number" [(ngModel)]="drug.amount" #drugAmount="ngModel" drugAmount="ngModel" ngModel name="drugAmount"   class="last" required>
+
+      <button class="btn btn-success add" [disabled]="addDrug.invalid && !(drugName.dirty) && !(drugAmount.dirty)" (click)="save()" >  حفظ </button>
+
+    </form>
+
+  </div>
+</div>

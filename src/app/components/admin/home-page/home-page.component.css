@@ -1,0 +1,91 @@
+
+aside{
+
+  background-color: #ccd7e9;;
+  position:fixed;
+  width: 18%;
+  height: 100%;
+  right: 0px;
+  overflow: hidden;
+  border: 2px solid #3c3cf1cc;
+  margin-left: 5%;
+
+
+}
+aside .logo {
+  width: 150px;
+  margin: auto;
+
+}
+
+aside .logo img {
+  width: 100%;
+}
+
+aside .category{
+
+  margin-top: 30%;
+  position: relative;
+  left: 12%;
+}
+aside  button {
+
+  display: block;
+  color: #FFF;
+  margin: auto;
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+
+
+.items{
+background-color: "cadetblue;"
+}
+
+.items button:hover{
+ background-color:chocolate !important;
+ width: 100%;
+}
+.cate{
+  margin-top: 10px;
+}
+.Totalpatient{
+  text-align: center;
+  width: 300px;
+  background-color: #ccd7e9;
+  border: 2px solid #000;
+  border-radius:20px;
+  margin: auto;
+  padding: 5px;
+  font-family: monospace;
+  position: relative;
+  top: 20px;
+}
+
+.chart{
+  position: relative;
+  top: 50px;
+  width:450px;
+  height:450px;
+  margin: auto;
+}
+.patientImg{
+  width: 300px;
+  height: 300px;
+  margin-left: 37%;
+  margin-top: 40px;
+
+}
+
+.patientImg img{
+  width: 100%;
+  height: 100%;
+}
+.number{
+  position: relative;
+  top: 226px;
+  left: 49%;
+  font-size: 25px;
+  color: blue;
+  font-weight: bold;
+}

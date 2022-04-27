@@ -1,0 +1,35 @@
+<app-exit></app-exit>
+
+<div class="container">
+
+  <div class="image">
+    <img src="../../../../assets/brand/logo.png"  alt="شعار كلية الظباط الاحتياط">
+  </div>
+  <h2 *ngIf="error || fullnamevalid" style="margin-top: 20px;" class="alert alert-danger text-center">المريض غير مسجل في المنظومة </h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">الاسم</th>
+        <th scope="col">الرقم العسكري</th>
+        <th scope="col">الرقم القومي</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  >
+        <td> <span class="m-1">{{p.fname }}</span> <span class="m-1">{{ p.mname }}</span><span class="m-1"> {{ p.mname2 }}</span><span class="m-1"> {{ p.lname }}</span>  </td>
+        <td >{{p.militaryNumber }} </td>
+        <td>{{p.nationalId }}</td>
+        <td>
+          <button class="btn btn-success " [disabled]="error||fullnamevalid"  routerLink="/updatepatient" [queryParams]="{patientid:p.id}">تعديل</button>
+            <button routerLink="/clinics" [disabled]="error ||fullnamevalid" (click)="bookClinic()" class="btn btn-primary" > حجز عيادة </button>
+            <button class="btn btn-danger" [disabled]="error ||fullnamevalid"  (click)="history()" routerLink="/diseashistory" [queryParams]="{patientid:p.id}"  >التاريخ المرضي</button>
+         </td>
+      </tr>
+
+      <tr>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

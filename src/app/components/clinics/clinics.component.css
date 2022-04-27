@@ -1,0 +1,155 @@
+*{
+  direction: rtl;
+}
+.login{
+  background: url(../../../assets/brand/background.jpg);
+   /* Full height */
+   height: 100%;
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: fixed;
+   width: 100%;
+   z-index: 1;
+   overflow-y: scroll;
+}
+.chooseClinic{
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #FFF;
+  border-right: transparent;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+  background-color: #00537a;
+  margin-bottom: 25px;
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  top: 30px;
+
+}
+
+.login .image{
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.login  .image img{
+  width: 100%;
+  height: 100%;
+}
+
+.search{
+  margin: 10px;
+  padding-bottom: 50px;
+}
+
+.search button{
+  padding: 10px 15px;
+  margin: 0 5px;
+  width: 20%;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.footer{
+  background-color: #00537a;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  color: #FFF;
+}
+
+.footer .nameOfRe{
+  margin-left: 20px;
+}
+
+select{
+  width: 20%;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 20px;
+  margin-right: 20px;
+  padding-right: 10px;
+}
+.box{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.img{
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  background-color: #fff;
+  border: 2px solid #AAA;
+  border-radius: 10px;
+  box-shadow: 2px  2px 10px #00537a,-2px -2px 10px #00537a;
+}
+
+.img img
+{
+  width: 90%;
+  height: 90%;
+}
+
+.block .clinic{
+  margin: 15px 0;
+}
+
+
+
+
+.block .clinic button{
+  width: 200px;
+  margin: 10px;
+  border: 2px solid rgb(3, 154, 241);
+  padding: 5px 15px;
+  background-color: #FFF;
+  color: #000;
+  border-radius: 20px;
+  font-size: 20px ;
+  font-weight: bold
+}
+
+.block .clinic:hover .img,.block .clinic:hover button{
+  transition: all .5s ease-in-out;
+  background-color: #00537a;
+  color: #FFF;
+  border: 2px solid #AAA;
+  cursor: pointer;
+}
+
+.active .img,.active button{
+  transition: all .5s ease-in-out;
+  background-color: #00537a !important;
+  color: #FFF !important;
+  border: 2px solid #AAA;
+  cursor: pointer;
+}
+
+
+.error{
+  padding-top: 10%;
+
+
+}
+
+.errorbtn{
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}

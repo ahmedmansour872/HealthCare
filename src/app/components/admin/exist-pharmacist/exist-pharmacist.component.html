@@ -1,0 +1,35 @@
+<app-exit></app-exit>
+
+<div class="container">
+
+  <div class="image">
+    <img src="../../../../assets/brand/logo.png"  alt="شعار كلية الظباط الاحتياط">
+  </div>
+  <h2 *ngIf="error || fullnamevalid" style="margin-top: 20px;" class="alert alert-danger text-center"> لا يوجد صيدلي بهذه البيانات </h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">الاسم</th>
+        <th scope="col">الرقم العسكري</th>
+        <th scope="col">الرقم القومي</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  >
+        <td> <span class="m-1">{{ph.fname}}</span> <span class="m-1">{{ph.mname}}</span><span class="m-1"> {{ph.mname2}}</span><span class="m-1"> {{ph.lname}}</span>  </td>
+        <td >{{ph.militaryNumber }} </td>
+        <td>{{ph.nationalId }}</td>
+        <td>
+          <button class="btn btn-success " [disabled]="error||fullnamevalid"  routerLink="/admin/phDetails" [queryParams]="{phid:ph.id}">  بيانات الصيدلي</button>
+            <button routerLink="/clinics" [disabled]="error ||fullnamevalid" routerLink="/admin/editPh" [queryParams]="{phid:ph.id}"  class="btn btn-primary" > تعديل  </button>
+            <button class="btn btn-danger" [disabled]="error ||fullnamevalid"  routerLink="/diseashistory" [queryParams]="{phid:ph.id}"  >حذف</button>
+         </td>
+      </tr>
+
+      <tr>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+

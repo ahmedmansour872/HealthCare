@@ -1,0 +1,104 @@
+<div class="login">
+  <!-- <div class="shadow"></div> -->
+  <app-exit></app-exit>
+
+
+  <div class="container error" *ngIf="error">
+    <h2 class="alert alert-danger text-center" > يوجد حجز لهذا المريض</h2>
+    <button routerLink="/reception"  class="btn btn-success text-center errorbtn" > الرجوع الي صفحة الاستقبال</button>
+  </div>
+
+  <div class="show" *ngIf="!error">
+
+    <div class="container">
+
+      <div class="box">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="chooseClinic">
+          <span>اختيار العياده</span>
+        </div>
+        <div class="block row ">
+          <div class="clinic col-4" #ref (click)="toggle(ref)" >
+            <div class="img">
+              <img src="../../../assets/icons/قلب.png" alt="">
+            </div>
+            <button> القلب</button>
+
+          </div>
+          <div class="clinic col-4" #refe (click)="toggle(refe)" >
+            <div class="img ">
+              <img src="../../../assets/icons/رمد.png"alt="" >
+            </div>
+              <button> الرمد</button>
+          </div>
+          <div class="clinic col-4 "  #refd (click)="toggle(refd)">
+            <div class="img">
+              <img src="../../../assets/icons/انف-و-اذن.png " alt="">
+            </div>
+              <button>  انف واذن وحنجرة</button>
+          </div>
+          <div class="clinic col-4"  #refa (click)="toggle(refa)">
+            <div class="img ">
+              <img src="../../../assets/icons/جراحه-عامه.png"alt="">
+            </div>
+              <button> جراحة عامة </button>
+          </div>
+          <div class="clinic col-4"  #refb (click)="toggle(refb)">
+            <div class="img">
+              <img src="../../../assets/icons/باطنه.png" alt="">
+            </div>
+              <button> باطنة</button>
+          </div>
+          <div class="clinic col-4"  #refc (click)="toggle(refc)">
+            <div class="img">
+              <img src="../../../assets/icons/اسنان.png" alt="">
+            </div>
+              <button> اسنان </button>
+          </div>
+          <div class="clinic col-4"  #refq (click)="toggle(refq)">
+            <div class="img">
+              <img src="../../../assets/icons/مخ-و-اعصاب.png" alt="">
+            </div>
+              <button> مخ-و-اعصاب </button>
+          </div>
+          <div class="clinic col-4"  #refw (click)="toggle(refw)">
+            <div class="img">
+              <img src="../../../assets/icons/مسالك.png" alt="">
+            </div>
+              <button> مسالك </button>
+          </div>
+          <div class="clinic col-4"  #refr (click)="toggle(refr)">
+            <div class="img">
+              <img src="../../../assets/icons/عظام.png" alt="">
+            </div>
+              <button> عظام </button>
+          </div>
+          <div class="clinic col-4"  #reft (click)="toggle(reft)">
+            <div class="img">
+              <img src="../../../assets/icons/علاج-طبيعى.png" alt="">
+            </div>
+              <button> علاج-طبيعى </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="search">
+        <button type="button" class="next btn btn-primary" [disabled]="!chooseClinic"  (click)="submitClinic()">التالي</button>
+        <!-- <button type="button" routerLink="/ticket" class="next btn btn-primary"  (click)="submitClinic()">التالي</button> -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="footer">
+    <div class="nameOfRe" >
+      {{username}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+
+aside{
+
+  background-color: cornflowerblue;
+  position:fixed;
+  width: 15%;
+  height: 100%;
+  right: 0px;
+  overflow: hidden;
+  border: 2px solid #3c3cf1cc;
+  margin-left: 5%;
+
+
+}
+aside .logo {
+  width: 150px;
+  margin: auto;
+
+}
+
+aside .logo img {
+  width: 100%;
+}
+
+aside .category{
+
+  margin-top: 30%;
+}
+aside  button {
+
+  width: 80%;
+  display: block;
+  color: #FFF;
+  margin: auto;
+  font-weight: bold;
+
+  margin-bottom: 3%;
+
+}
+
+.container{
+  margin-left: 1%;
+}
+.add{
+  margin: 20px 0;
+}
+.hr {
+  display: block;
+  flex: 1;
+  margin: 0 30px;
+  height: 3px;
+  background: #D4D4D4;
+}
+.headings {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 20px 0;
+  margin: auto;
+
+
+}
+
+.head{
+  width: 500px;
+  margin: auto;
+  background-color: #6495ed;
+  padding: 10px;
+  font-family: monospace;
+  /* color: #000; */
+  color: #fff;
+  border-radius: 20px;
+}
+
+.add{
+  direction: rtl;
+  text-align: right;
+  float: right;
+
+}
+table{
+  direction: rtl;
+  text-align: right;
+  margin: auto;
+
+}
+table tbody td{
+  font-size: 20px;
+  font-weight: bold;
+}

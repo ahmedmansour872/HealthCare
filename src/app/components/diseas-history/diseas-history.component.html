@@ -1,0 +1,272 @@
+<!--
+<h2>diseas history</h2>
+
+<p> {{ patient.fname}}</p> -->
+<app-exit></app-exit>
+
+<div class="header">
+
+<div class="container">
+
+    <div class="row">
+      <div class="logo col-4">
+        <img src="../../../assets/brand/logo.png" alt="شعار كلية الضباط الاحتياط">
+      </div>
+      <div class="col-4"></div>
+      <div class="info col-4" >
+       <div class="details">
+        <p style="font-weight: bold; text-align: center;"> اسم المريض / {{fullname}}</p>
+        <p style="font-weight: bold; text-align: center">الرقم القومي / {{patient.nationalId}}</p>
+        <p style="font-weight: bold; text-align: center">الرقم العسكري / {{patient.militaryNumber}}</p>
+       </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container second">
+<!-- <div class="row">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+
+</div> -->
+
+<div class="row">
+  <div class="card" style="width: 18rem;">
+    <div class="imgcontainer">
+      <img class="card-img-top" src="../../../assets/icons/قلب.png" alt="Card image cap">
+
+    </div>
+    <div class="card-body">
+      <p class="card-text  text-center">عيادة القلب</p>
+      <p class="card-text">عدد مرات التردد:{{history[0].length}}</p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[0].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:1}" value="عرض تاريخ زيارة العياد">
+    </div>
+
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="imgcontainer"><img class="card-img-top" src="../../../assets/icons/رمد.png" alt="Card image cap">    </div>
+    <div class="card-body">
+      <p class="card-text text-center">عيادة الرمد</p>
+      <p class="card-text"> عدد مرات التردد: {{history[1].length}} </p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[1].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:2}" value="عرض تاريخ زيارة العياد">
+
+
+     </div>
+
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="imgcontainer">
+      <img class="card-img-top " src="../../../assets/icons/اسنان.png" alt="Card image cap">
+
+    </div>
+    <div class="card-body">
+      <p class="card-text text-center" >عيادة الاسنان</p>
+      <p class="card-text"> عدد مرات التردد : {{history[5].length}} </p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[5].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:6}" value="عرض تاريخ زيارة العياد">
+    </div>
+
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="card" style="width: 18rem;">
+    <diV class="imgcontainer">
+      <img class="card-img-top" src="../../../assets/icons/انف-و-اذن.png" alt="Card image cap">
+
+    </diV>
+    <div class="card-body">
+      <p class="card-text text-center">عيادة الانف والاذن</p>
+      <p class="card-text"> عدد مرات التردد: {{ history[2].length }} </p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[2].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:3}" value="عرض تاريخ زيارة العياد">
+
+    </div>
+
+
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="imgcontainer">
+      <img class="card-img-top" src="../../../assets/icons/باطنه.png" alt="Card image cap">
+
+    </div>
+    <div class="card-body">
+      <p class="card-text text-center">عيادة الباطنة</p>
+      <p class="card-text"> عدد مرات التردد: {{history[4].length}} </p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[4].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:5}" value="عرض تاريخ زيارة العياد">
+
+
+
+</div>
+
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="imgcontainer">
+      <img class="card-img-top" src="../../../assets/icons/جراحه-عامه.png" alt="Card image cap">
+    </div>
+    <div class="card-body">
+      <p class="card-text text-center">عيادة الجراحة العامة</p>
+      <p class="card-text"> عدد مرات التردد: {{history[3].length}} </p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[3].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:4}" value="عرض تاريخ زيارة العياد">
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+</div>
+
+<div class="row">
+  <div class="card" style="width: 18rem;">
+    <div class="imgcontainer">
+      <img class="card-img-top" src="../../../assets/icons/مخ-و-اعصاب.png" alt="Card image cap">
+    </div>
+    <div class="card-body">
+      <p class="card-text text-center">عيادة المخ والاعصاب </p>
+      <p class="card-text"> عدد مرات التردد: {{history[6].length}} </p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[6].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:7}" value="عرض تاريخ زيارة العياد">
+
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="imgcontainer">    <img class="card-img-top" src="../../../assets/icons/عظام.png" alt="Card image cap">
+    </div>
+    <div class="card-body">
+      <p class="card-text text-center ">عيادة العظام</p>
+      <p class="card-text"> عدد مرات التردد: {{history[8].length}}</p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[8].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:9}" value="عرض تاريخ زيارة العياد">
+
+
+
+      </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="imgcontainer">    <img class="card-img-top" src="../../../assets/icons/مسالك.png" alt="Card image cap">
+    </div>
+    <div class="card-body">
+      <p class="card-text text-center"> عيادة المسالك</p>
+      <p class="card-text"> عدد مرات التردد :{{history[7].length}} </p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[7].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:8}" value="عرض تاريخ زيارة العياد">
+
+
+
+     </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="card" style="width: 18rem;">
+    <div class="imgcontainer">
+      <img class="card-img-top" src="../../../assets/icons/علاج-طبيعى.png" alt="Card image cap">
+    </div>
+    <div class="card-body">
+      <p class="card-text text-center">عيادة العلاج الطبيعي</p>
+      <p class="card-text"> عدد مرات التردد: {{history[9].length}} </p>
+      <input type="button"  class="btn btn-success detailsbtn text-center" style="margin:20px !important;" [disabled]="history[9].length==0" routerLink="/patientHistory" [queryParams]="{patientid:patient.id,clinicId:10}" value="عرض تاريخ زيارة العياد">
+
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+

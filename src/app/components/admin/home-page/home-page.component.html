@@ -1,0 +1,89 @@
+<aside>
+  <div class="logo">
+    <img src="../../assets/brand/logo.png" alt="">
+  </div>
+
+  <div class="category">
+
+    <div class="col cate">
+      <div ngbDropdown class="d-inline-block">
+
+        <button class="btn btn-outline-danger" style="width: 200px; background-color: brown;text-align: center;" id="dropdownBasic1" ngbDropdownToggle>الاطباء </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="items" style="background-color: cadetblue;">
+          <button ngbDropdownItem routerLink="/admin/serarchDoctor"> بحث</button>
+          <button ngbDropdownItem routerLink="/admin/addDoctor">اضافة</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col cate">
+      <div ngbDropdown class="d-inline-block">
+
+        <button class="btn btn-outline-danger" style="width: 200px; background-color: brown;text-align: center;" id="dropdownBasic1" ngbDropdownToggle>الصيادلة </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="items" style="background-color: cadetblue;">
+          <button ngbDropdownItem routerLink="/admin/SearchPharmacist"> بحث</button>
+          <button ngbDropdownItem routerLink="/admin/addph">اضافة</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col cate">
+      <div ngbDropdown class="d-inline-block">
+
+        <button class="btn btn-outline-danger" style="width: 200px; background-color: brown;text-align: center;" id="dropdownBasic1" ngbDropdownToggle> الاستقبال </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="items" style="background-color: cadetblue;">
+          <button ngbDropdownItem routerLink="/admin/searchRecp"> بحث</button>
+          <button ngbDropdownItem routerLink="/admin/addRecep">اضافة</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col cate">
+      <div ngbDropdown class="d-inline-block">
+
+        <button class="btn btn-outline-danger" style="width: 200px; background-color: brown; text-align: center;" id="dropdownBasic1" ngbDropdownToggle> المرضي </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="items" style="background-color: cadetblue;">
+          <button ngbDropdownItem> بحث</button>
+          <button ngbDropdownItem>تقرير المرضي اليومي</button>
+        </div>
+      </div>
+    </div>
+    <div class="col cate">
+      <div ngbDropdown class="d-inline-block">
+
+        <button class="btn btn-outline-danger" style="width: 200px; background-color: brown; text-align: center;" id="dropdownBasic1" ngbDropdownToggle> المخازن </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="items" style="background-color: cadetblue;">
+          <button ngbDropdownItem> الادوية التي تم صرفها</button>
+          <button ngbDropdownItem> الادوبة الموجود يالفعل</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</aside>
+
+
+<div class="container">
+
+  <div class="total">
+    <h2 class="Totalpatient" > عدد المرضي اليومي</h2>
+    <p class="number" style="font-weight: bold;"> {{totalNumber}}</p>
+    <div class="patientImg">
+      <img src="../../../../assets/count.png" alt="">
+    </div>
+  </div>
+
+
+
+  <div class="chart">
+    <div >
+      <canvas #pieCanvas ></canvas>
+      <hr color="red">
+    </div>
+  </div>
+</div>
+
+
+
+

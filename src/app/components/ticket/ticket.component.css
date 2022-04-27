@@ -1,0 +1,48 @@
+.ticket{
+  text-align: center;
+  direction: rtl;
+}
+.ticket .image{
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.ticket .image img{
+  width: 100%;
+  height: 100%;
+}
+.ticket .number{
+  font-weight: bold;
+  font-size: 3rem;
+}
+.number p {
+  margin: -5px;
+}
+.ticket .info{
+  width: 40%;
+  margin: auto;
+}
+.ticket .info div{
+  margin: 25px 0;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: right;
+}
+hr{
+  width: 40%;
+  border-top: 5px dotted #000;
+}
+.nameofresp{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+button{
+  display: inline-block;
+  margin-left: 2%;
+  padding: 10px 15px;
+  margin-top: 20px;
+}
+
+

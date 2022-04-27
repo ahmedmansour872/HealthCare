@@ -1,0 +1,174 @@
+<div class="login">
+
+  <div class="shadow"></div>
+
+  <div class="show">
+    <div class="container">
+      <ng-container *ngIf="chooseClinic">
+        <div class="clinic">
+          عياده {{clinicName}}
+        </div>
+      </ng-container>
+      <div class="row">
+        <div class="fo col-lg-8" >
+          <form name="form" #loginForm="ngForm"  novalidate  >
+            <div class="form-group row">
+              <label  class="col-sm-3 col-form-label">الاسم</label>
+              <div class="col-sm-9 number">
+                <input value="{{fullName}}" name="fullName" type="text" disabled placeholder="اسم المريض">
+              </div>
+            </div>
+
+            <div class="form-group row ">
+              <label  class="col-sm-3 col-form-label">الرقم العسكري</label>
+              <div class="col-sm-9 number">
+                <input value="{{returendPatient.militaryNumber}}" name="militaryNumber" type="text" disabled placeholder="الرقم العسكري">
+              </div>
+            </div>
+
+            <div class="form-group row number">
+              <label  class="col-sm-3 col-form-label">الرقم القومي</label>
+              <div class="col-sm-9 number">
+                <input value="{{returendPatient.nationalId}}" type="text" name="nationalID" disabled placeholder="الرقم القومي">
+              </div>
+            </div>
+
+            <div class="form-group row number">
+              <label  class="col-sm-3 col-form-label" > السن</label>
+              <div class="col-sm-9 number">
+                <input value="{{returendPatient.age}}" type="text" name="age" disabled placeholder="السن">
+              </div>
+            </div>
+
+            <div class="form-group row number">
+              <label  class="col-sm-3 col-form-label"  >الجنسية</label>
+              <div class="col-sm-9 number">
+                <input value="{{returendPatient.nationality}}"  name="nationality"  type="text" disabled placeholder="الجنسية">
+              </div>
+            </div>
+
+            <div class="form-group row number">
+              <label  class="col-sm-3 col-form-label">الوحده</label>
+              <div class="col-sm-9 number">
+                <input value="{{returendPatient.religion}}" name="religion" type="text" disabled placeholder="الوحده">
+              </div>
+            </div>
+
+            <div class="form-group row number">
+              <label  class="col-sm-3 col-form-label">النوع</label>
+              <div class="col-sm-9 number">
+                <input value="{{returendPatient.gender}}" name="gender" type="text" disabled placeholder="النوع">
+              </div>
+            </div>
+
+            <hr *ngIf="patientID">
+            <h6 class="text-center alert alert-primary" *ngIf="patientID">تشخيص الطبيب  </h6>
+            <div class="spe form-group row number" *ngIf="patientID">
+              <label class="col-sm-3 col-form-label">التشخيص</label>
+              <div class="col-sm-9 number">
+                <textarea #desc="ngModel" [(ngModel)]="descrption" ngModel name="desc" id="" cols="30" rows="9" placeholder="من فضلك ادخل التشخيص"></textarea>
+              </div >
+            </div>
+            <hr *ngIf="patientID">
+            <div class="spe form-group row number" *ngIf="patientID">
+              <label class="col-sm-3 col-form-label">التوصية الطبية</label>
+              <div class="col-sm-9 number">
+                <textarea type="text" [(ngModel)]="recommandation" rows="4"  name="recomm" placeholder="توصية الطبيب"></textarea>
+
+              </div>
+
+            </div>
+
+            <div class="check form-group row" *ngIf="patientID">
+              <label for="cheking" class="col-sm-3 col-form-label">حجز في العياده</label>
+              <div>
+                <input type="checkbox" name="checked" [(ngModel)]="checked" id="cheking" class="cheking">
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+        <div class="sidebar col-lg-4">
+          <div class="getPatioent">
+            <button class="btn btn-success" (click)="getPatient()" >اسماء المرضي</button>
+            <h2 class="alert alert-danger" style="margin-top: 3%;" *ngIf="temp==0">  لا يوجد مرضي للكشف </h2>
+
+            <div class="patient" [hidden]="patients.length==0">
+              <p (click)=getPatientById(pa) *ngFor="let pa of patients">{{pa.rank}} / {{pa.fname}} {{pa.mname}} {{pa.mname2}} {{pa.lname}}  </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="drugs" *ngIf="patientID">
+        <div class="drugsName">
+          <label>اسم العلاج</label>
+          <input type="text"[(ngModel)]="drugName" placeholder="اختيار العلاج" class="drugsNumber" list="drugs">
+          <datalist  id="drugs">
+            <option [value]="i.name" *ngFor="let i of d ">
+          </datalist>
+        </div>
+        <div class="drugsName">
+          <label>الكميه</label>
+          <input type="number" [(ngModel)]="drugAmount" class="drugsNumber">
+        </div>
+        <div class="drugsName">
+          <label>الجرعة</label>
+          <input type="number" amountparday  [(ngModel)]="drugAmountPday" class="drugsNumber">
+        </div>
+
+        <div class="drugsName">
+          <label>توقيت الجرعة</label>
+          <input type="number" [(ngModel)]="duration" class="drugsNumber">
+        </div>
+
+      </div>
+
+      <div >
+        <button class="btn btn-danger save" *ngIf="patientID" [disabled]="!duration || !drugName || !drugAmount || !drugAmountPday" (click)="savePre()"> اضافة العلاج  </button>
+      </div>
+
+      <div class="table" *ngIf="patientID">
+        <table class="table" *ngIf="p.length>0">
+          <thead>
+            <tr>
+              <th>م</th>
+              <th>اسم العلاج</th>
+              <th>الكميه</th>
+              <th>الجرعة</th>
+              <th>توقيت الجرعة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let drug of p;let i=index">
+              <td>{{i+1}}</td>
+              <td>{{drug.drugName}}</td>
+              <td>{{drug.drugAmount}}</td>
+              <td>{{drug.drugAmountPday}}</td>
+              <td>{{drug.duration}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <button  class="btn btn-success save" [disabled]="!descrption " (click)="addRecom()">المريض التالي</button>
+    </div>
+  </div>
+
+
+
+  <button  class="btn btn-danger exit" (click)="exit()">   تسجيل الخروج</button>
+
+  <div class="footer">
+    <div class="nameOfRe" >
+     {{username}}
+    </div>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,46 @@
+<!-- <p>{{activatedRoute.params | async |json}}</p>
+
+<p>{{activatedRoute.snapshot.paramMap.keys |json}}</p>
+<p>{{activatedRoute.snapshot.paramMap.has('id') |json}}</p> -->
+
+
+<div class="login">
+  <br>
+  <br>
+  <div class="shadow"></div>
+  <div class="show">
+
+  <div class="image">
+    <img src="../../../assets/brand/logo.png"  alt="شعار كلية الظباط الاحتياط">
+  </div>
+  <div class="container">
+    <form name="form" #loginForm="ngForm"  >
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label"  >اسم المستخدم</label>
+        <div class="col-sm-10">
+          <input type="text" required name="username" ngModel  #username="ngModel" class="form-control" id="inputUserName">
+          <br>
+          <span class="alert alert-danger error"  *ngIf="username.touched && username.invalid" > من فضلك ادخل اسم المستخدم </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">كلمة المرور</label>
+        <div class="col-sm-10">
+          <input type="password" name="password" required ngModel #password="ngModel" class="form-control" id="inputPassword">
+          <br>
+          <span class="alert alert-danger error"  *ngIf="password.touched && password.invalid" > من فضلك ادخل الرقم السري </span>
+
+        </div>
+
+      </div>
+      <button type="submit"  class="btn btn-primary"(click)="submition(username.value,password.value)" [disabled]="loginForm.invalid" [class.test]="!loginForm.invalid" >دخول</button>
+      <br>
+      <br>
+
+      <span *ngIf="error"  class="alert alert-danger errorMessage ">  خطا في اسم المستخدم او الرقم السري</span>
+    </form>
+
+  </div>
+
+  </div>
+</div>

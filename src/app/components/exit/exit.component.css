@@ -1,0 +1,26 @@
+.navv{
+  background-color:#edf0f969;
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  color: #FFF;
+
+}
+.exit{
+
+  background-color: transparent;
+  color: #cb0303;
+  font-weight: bold;
+  border: 1px solid #cfcfcf;
+  background-color: #fff;
+  position: relative;
+  left: 92%;
+
+}
+.exit:hover{
+  background-color: #cb0303;
+  color: white;
+  transition: all 0.5s ease-in-out;
+  outline: 0;
+}

@@ -1,0 +1,69 @@
+<<div class="login">
+
+  <app-exit></app-exit>
+
+  <div class="show">
+
+    <div class="image">
+      <img src="../../../../assets/brand/logo.png"  alt="شعار كلية الظباط الاحتياط">
+    </div>
+    <div class="container">
+      <form name="form" #loginForm="ngForm"  novalidate  >
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">الاسم</label>
+          <div class="col-sm-10 naming">
+            <input #fname="ngModel"   [(ngModel)]="returnedDoctor.fname" name="fname" ngModel required type="text" >
+            <input #mname="ngModel"    [(ngModel)]="returnedDoctor.mname"  name="mname" ngModel required  type="text" >
+            <input #mname2="ngModel"    [(ngModel)]="returnedDoctor.mname2" name="mname2" ngModel  required  type="text">
+            <input #lname="ngModel"    [(ngModel)]="returnedDoctor.lname" name="lname"   ngModel required  type="text">
+          </div>
+          <span class="alert alert-danger error" *ngIf=" fname.touched&&fname.invalid&& mname.touched&&mname.invalid && mname2.touched&&mname2.invalid && lname.touched&&lname.invalid" >برجاء ادخال اسم المريض </span>
+
+
+        </div>
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label">الرقم العسكري</label>
+          <input #militaryNumber="ngModel"   [(ngModel)]="returnedDoctor.militaryNumber"  ngModel name="militaryNumber" required type="text" maxlength="13" minlength="13" >
+          <span class="alert alert-danger error" *ngIf=" militaryNumber.touched&&militaryNumber.invalid" > برجاء ادخال رقم عسكري صحيح </span>
+        </div>
+
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label">الرقم القومي</label>
+          <input #nationalID="ngModel"   [(ngModel)]="returnedDoctor.nationalId" type="text" ngModel name="nationalID" required maxlength="14" minlength="14">
+          <span class="alert alert-danger error" *ngIf=" nationalID.touched&&nationalID.invalid" > برجاء ادخال  بطاقة الرقم القومي   صحيح </span>
+
+        </div>
+
+
+
+
+
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label"> اسم المستخدم</label>
+          <input #username="ngModel"   [(ngModel)]="returnedDoctor.username" type="text" ngModel name="username" required >
+          <span class="alert alert-danger error" *ngIf=" username.touched&&username.invalid" > برجاء  ادخال اسم مستخدم  </span>
+
+        </div>
+
+
+
+
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label"> الرقم السري</label>
+          <input #password="ngModel"   [(ngModel)]="returnedDoctor.password" type="text" ngModel name="password" required >
+          <span class="alert alert-danger error" *ngIf=" password.touched&&password.invalid" > برجاء ادخال رقم سري </span>
+
+        </div>
+
+
+
+
+        <button  class="btn btn-success update" (click)="addDoctor()"  [disabled]="loginForm.invalid"> اضافة موظف استقبال  </button>
+        <p *ngIf="error" class="alert alert-danger duplicate text-center">  من فضلك اعد ادخال البيانات يوجد بيانات مكررة  </p>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+

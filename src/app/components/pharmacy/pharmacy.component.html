@@ -1,0 +1,112 @@
+<app-exit></app-exit>
+
+<div class="header">
+
+  <div class="logo">
+    <img src="../../../../assets/brand/logo.png"  alt="شعار كلية الظباط الاحتياط">
+  </div>
+
+</div>
+
+
+<div class="container">
+
+  <h3 class="alert alert-danger text-center" style="margin-top: 30px;" *ngIf="(err=='not found') || (x) && (temp.length==0)" > لايوجد روشتة لهذ المريض</h3>
+  <h3 class="alert alert-danger text-center" style="margin-top: 30px;"  *ngIf="(err=='done')" > تم صرف الروشتة  </h3>
+
+  <form name="form" #loginForm="ngForm"  >
+
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">الاسم </label>
+      <div class="col-sm-10 naming">
+        <input type="text" autocomplete="off" #fnamee="ngModel" ngModel  name="fname" [(ngModel)]="fname" >
+        <input type="text" autocomplete="off" #mnamee="ngModel" ngModel  name="mname" [(ngModel)]="mname" >
+        <input type="text" autocomplete="off" #mnamee2="ngModel" ngModel name="mname2" [(ngModel)]="mname2">
+        <input type="text" autocomplete="off" #lnamee="ngModel" ngModel  name="name"  [(ngModel)]="lname">
+      </div>
+    </div>
+    <div class="form-group row number">
+      <label for="inputPassword" class="col-sm-2 col-form-label">الرقم العسكري</label>
+      <input type="text" minlength="13" #militaryNumber="ngModel"  ngModel  maxlength="13" autocomplete="off" name="mnumber" #mnumberr="ngModel"   [(ngModel)]="mnumber">
+      <!-- <span class="alert alert-danger error" *ngIf=" militaryNumber.touched && militaryNumber.invalid" > برجاء ادخال رقم عسكري صحيح </span> -->
+
+
+    </div>
+
+    <div class="form-group row number">
+      <label for="inputPassword" class="col-sm-2 col-form-label">الرقم القومي</label>
+      <input type="text" minlength="14" maxlength="14"    autocomplete="off"  #nationalIdd="ngModel" ngModel  name="nationalID" [(ngModel)]="nationalID">
+      <!-- <span class="alert alert-danger error" *ngIf=" nationalID.touched&&nationalID.invalid" > برجاء ادخال  بطاقة الرقم القومي   صحيح </span> -->
+
+    </div>
+    <div class="search">
+      <button type="submit" class="btn btn-primary" [disabled]="(mnumberr.value==null||mnumberr.value=='') &&(nationalIdd.value==null || nationalIdd.value=='')&&(fnamee.value==null||fnamee.value==''||mnamee.value==null|| mnamee.value==''||mnamee2.value==null || mnamee2.value==''|| lnamee.value==null || lnamee.value=='')" (click)="search(loginForm)"  >بحث</button>
+    </div>
+  </form>
+
+
+  <form name="form" class="form2" *ngIf="(temp && !err && temp.length!=0) "  >
+    <div class="form-group  row number patioentData">
+      <label for="inputPassword"> الدكتور المعالج</label>
+      <input class="ph" disabled type="text" [value]="phDetails.doctor_Name" >
+    </div>
+    <div class="form-group row number patioentData">
+      <label for="inputPassword" > العيادة </label>
+      <input class="ph" disabled type="text"  [value]="phDetails.clinc_Name">
+    </div>
+    <div class="form-group row number patioentData">
+      <label for="inputPassword" >الاسم</label>
+      <input class="ph" disabled type="text" [value]="phDetails.patientFull_Name" >
+    </div>
+
+    <div class="form-group row number patioentData">
+      <label for="inputPassword" > السن </label>
+      <input class="ph" disabled [value]="phDetails.age"  type="text">
+    </div>
+    <div class="form-group row number patioentData">
+      <label for="inputPassword" > الوحدة</label>
+      <input class="ph" type="text" disabled [value]="phDetails.religion" >
+    </div>
+
+    <div class="form-group row number patioentData">
+      <label for="inputPassword"> الرتبة </label>
+      <input class="ph" disabled [(value)]="phDetails.rank" type="text">
+    </div>
+
+    <div class="table1" >
+      <hr>
+      <label class="drug" > العلاج المطلوب</label>
+
+
+      <hr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>اسم العلاج</th>
+            <th>الكميه</th>
+            <th>الجرعة</th>
+            <th>توقيت الجرعة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let drug of phDetails.prescriptions;let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{drug.drugName}}</td>
+            <td> {{drug.drugAmount}}</td>
+            <td>{{drug.drugAmountPday}} </td>
+            <td>{{drug.duration}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button  class="btn btn-success save" (click)="doneDrug()"> تم الصرف</button>
+
+    </div>
+  </form>
+</div>
+
+<div class="footer">
+  <div class="nameOfRe" >
+   {{username}}
+  </div>
+</div>

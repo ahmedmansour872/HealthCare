@@ -1,0 +1,53 @@
+<app-exit></app-exit>
+
+<div class="header">
+
+
+  <div class="container">
+
+      <div class="row">
+        <div class="logo">
+          <img src="../../../assets/brand/logo.png" alt="شعار كلية الضباط الاحتياط">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<div class="container">
+  <h2 class="text-center history"> التاريخ المرضي للمريض في عيادة <span class="choosedClinic"> {{chooseClinic}}  </span> </h2>
+  <table class="table data ">
+    <thead class="thead-dark">
+       <th scope="col"> التاريخ</th>
+        <th scope="col"> اسم الدكتور </th>
+        <th scope="col">  التشخيص</th>
+        <th scope="col">  العلاج</th>
+    </thead>
+    <tbody>
+     <tr *ngFor="let item of patientHistory;let i = index">
+       <td>
+         {{item.date}}
+       </td>
+
+       <td>
+        {{item.doctor_Name}}
+      </td>
+
+      <td>
+        {{item.descripe}}
+
+      </td>
+
+      <td *ngFor="let x of item.drugsnames; let i = index" >
+        {{x.name}}
+      </td>
+
+     </tr>
+
+    </tbody>
+  </table>
+
+  <button class="btn btn-success text-center back"  routerLink="/reception"> الرجول الي صفحة الاستقبال </button>
+
+</div>

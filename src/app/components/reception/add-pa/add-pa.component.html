@@ -1,0 +1,118 @@
+<div class="login">
+
+  <app-exit></app-exit>
+  <div class="show">
+
+    <div class="image">
+      <img src="../../../../assets/brand/logo.png"  alt="شعار كلية الظباط الاحتياط">
+    </div>
+    <div class="container">
+      <form name="form" #loginForm="ngForm"  novalidate  >
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">الاسم</label>
+          <div class="col-sm-10 naming">
+            <input #fname="ngModel" name="fname" ngModel required type="text" >
+            <input #mname="ngModel"  name="mname" ngModel required  type="text" >
+            <input #mname2="ngModel" name="mname2" ngModel  required  type="text">
+            <input #lname="ngModel" name="lname"   ngModel required  type="text">
+          </div>
+          <span class="alert alert-danger error" *ngIf=" fname.touched&&fname.invalid&& mname.touched&&mname.invalid && mname2.touched&&mname2.invalid && lname.touched&&lname.invalid" >برجاء ادخال اسم المريض </span>
+
+
+        </div>
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label">الرقم العسكري</label>
+          <input #militaryNumber="ngModel"  ngModel name="militaryNumber" required type="text" maxlength="13" minlength="13" >
+          <span class="alert alert-danger error" *ngIf=" militaryNumber.touched&&militaryNumber.invalid" > برجاء ادخال رقم عسكري صحيح </span>
+        </div>
+
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label">الرقم القومي</label>
+          <input #nationalID="ngModel" type="text" ngModel name="nationalID" required maxlength="14" minlength="14">
+          <span class="alert alert-danger error" *ngIf=" nationalID.touched&&nationalID.invalid" > برجاء ادخال  بطاقة الرقم القومي   صحيح </span>
+
+        </div>
+
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label" > السن</label>
+          <input  #age="ngModel"   ngModel type="text" name="age" required>
+          <span class="alert alert-danger error" *ngIf=" age.touched&&age.invalid" >  برجاء ادخال عمر المريض</span>
+
+        </div>
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label"  >الجنسية</label>
+          <input #nationality="ngModel" ngModel  name="nationality"  type="text">
+        </div>
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label">الوحده</label>
+          <input #religion="ngModel"  name="religion" ngModel  type="text">
+        </div>
+
+        <div class="form-group row number">
+          <label  class="col-sm-2 col-form-label">الفئة</label>
+          <select name="" id="" #rank="ngModel" ngModel name="rank" required (change)="ahmed($event)">
+            <option value="ضابط"> ضابط</option>
+            <option value="ضابط صف">ضابط صف</option>
+            <option value="طالب">طالب</option>
+            <option value="جندي">جندي</option>
+            <option value="اخري">مدني</option>
+          </select>
+
+          <select name="" id="" #rank1="ngModel" ngModel name="rank1" hidden></select>
+
+          <ng-container *ngIf="ranking=='ضابط'">
+            <label  class="col-sm-2 col-form-label">الرتبه</label>
+            <select name="" id="" #rank1="ngModel" ngModel name="rank1">
+              <option value="ملازم"> ملازم</option>
+              <option value="ملازم اول"> ملازم اول</option>
+              <option value="نقيب"> نقيب</option>
+              <option value="رائد"> رائد</option>
+              <option value="مقدم"> مقدم</option>
+              <option value="عقيد"> عقيد</option>
+              <option value="عميد"> عميد</option>
+              <option value="لواء"> لواء</option>
+            </select>
+          </ng-container>
+
+          <ng-container *ngIf="ranking=='ضابط صف'">
+            <label  class="col-sm-2 col-form-label">الدرجة</label>
+            <select #rank1="ngModel" ngModel name="rank1">
+              <option value="عريف">عريف</option>
+              <option value=" رقيب">رقيب</option>
+              <option value="رقيب اول"> رقيب اول</option>
+              <option value="مساعد"> مساعد</option>
+              <option value="مساعد اول"> مساعد اول</option>
+            </select>
+          </ng-container>
+
+
+          <label  style="text-align: left;" class="col-sm-2 col-form-label">النوع</label>
+          <select name="" id="" ngModel #gender="ngModel" name="gender"  required >
+            <option selected  value="ذكر">ذكر</option>
+            <option value="انثي">انثي</option>
+          </select>
+
+
+        </div>
+
+        <div class="search">
+          <button type="submit" (click)="submit(fname,mname,mname2,lname,militaryNumber,nationalID,age,nationality,religion,rank,rank1,gender)"
+            class="btn btn-primary" [disabled]="loginForm.invalid" >التالي</button>
+        </div>
+      </form>
+      <h2 class="text-center alert alert-danger" *ngIf="error=='exist'"   >من فضلك اخل رقم عسكري او قومي اخر  </h2>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="nameOfRe" >
+      {{username}}
+    </div>
+  </div>
+
+
+</div>
+
+

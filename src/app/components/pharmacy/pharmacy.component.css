@@ -1,0 +1,189 @@
+.header{
+  background-color: #869cdb;
+  height:auto;
+  overflow:auto;
+  border: 2px solid #8796a5;
+  padding: 2%;
+}
+.header .logo{
+  width: 250px;
+  margin: auto;
+}
+
+.header .logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-top: 20px;
+
+}
+
+.login{
+  background: url(../../../assets/brand/background.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+   z-index: 1;
+}
+
+.login .image{
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.login  .image img{
+  width: 100%;
+  height: 100%;
+}
+
+form{
+  direction: rtl;
+  text-align: right;
+  width: 90%;
+  margin: 30px auto;
+}
+
+form .form-group{
+  margin: 15px 0;
+}
+
+form input{
+  background-color: transparent;
+  border: 2px solid #000;
+}
+
+form .naming input{
+  width: 20%;
+  border-radius: 20px;
+  padding: 10PX;
+  display: inline-block;
+  margin: 0 1%;
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+form .number input{
+  width: 70%;
+  border-radius: 20px;
+  padding: 10PX;
+  display: inline-block;
+  margin: 0 1%;
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 2%;
+}
+
+form label{
+  padding-top: 25px;
+  font-size: 20PX;
+  font-weight: bold;
+  color: #000;
+}
+
+form .patioentData{
+  width: 45%;
+  display: inline-block;
+}
+
+form .patioentData input{
+  width: 70%;
+}
+
+form .patioentData label{
+  width: 27%;
+  display: inline-block;
+  text-align: right;
+}
+
+form .patioentData:nth-child(2),
+form .patioentData:nth-child(4),
+form .patioentData:nth-child(6){
+  margin-right: 20px;
+}
+
+.search{
+  display: flex;
+  justify-content:left;
+  margin-left: 11%;
+  margin-top: 25px;
+}
+
+.search button{
+  padding: 10px 15px;
+  margin: 0 5px 50px;
+  width: 20%;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.table{
+  text-align: right;
+  direction: rtl;
+  position: relative;
+  z-index: 22222;
+  text-align: center;
+  font-size: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+ .table1 .drug{
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+
+}
+
+.table1 hr{
+  border: 1px solid rgba(128, 125, 125,0.5);
+}
+
+table tr td{
+
+  color: brown;
+}
+.save{
+  display: block;
+  width: 200px;
+  margin: auto;
+  padding: 10px 5px;
+}
+
+.footer{
+  background-color: #00537a;
+  position: relative;
+  bottom:-65px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  color: #FFF;
+
+}
+
+.footer .nameOfRe{
+  margin-left: 20px;
+}
+
+.form2 input {
+
+  color: #3b7e85;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.error {
+  display: inline-block;
+  width: 45%;
+  margin: 1% auto;
+  text-align: center;
+}

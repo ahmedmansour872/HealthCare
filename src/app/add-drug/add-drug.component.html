@@ -1,0 +1,49 @@
+
+<app-exit></app-exit>
+<aside>
+  <div class="logo">
+    <img src="../../assets/brand/logo.png" alt="">
+  </div>
+
+  <div class="category">
+    <button class="btn btn-primary" (click)="filter('1')" style="background-color: #a12d2d;" > دواء شرب </button>
+    <button class="btn btn-warning" (click)="filter('2')" >  اقراص </button>
+    <button class="btn btn-info" (click)="filter('3')">  حقن </button>
+    <button class="btn btn-primary" (click)="filter('4')"  style="background-color: #a12d2d;" >  مرهم </button>
+    <button class="btn btn-primary" (click)="all()"  style="background-color: #ce21ce;" >   الكل </button>
+
+
+
+  </div>
+</aside>
+<div class="container">
+
+  <div class="headings">
+      <span class="hr"></span>
+      <h1 class="text-center head"> مخزن الادوية </h1>
+      <span class="hr"></span>
+  </div>
+
+  <button class="btn btn-primary add" routerLink="/addNewDrug"  > اضافة دواء جديد  </button>
+
+
+  <table class="table">
+      <thead class="thead-dark">
+          <tr>
+              <th>#</th>
+              <th>اسم الدواء </th>
+              <th> الكمية </th>
+
+          </tr>
+      </thead>
+      <tbody >
+          <tr *ngFor="let drug of temp ; let i=index" >
+              <td >{{i+1}}</td>
+              <td > {{drug.name}} </td>
+              <td > {{drug.amount}} </td>
+              <td > <button class="btn btn-success" routerLink="/updateDrug" [queryParams]="{drugID:drug.id}"  > تعديل  </button> </td>
+          </tr>
+      </tbody>
+    </table>
+
+</div>

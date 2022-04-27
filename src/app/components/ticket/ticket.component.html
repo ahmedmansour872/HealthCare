@@ -1,0 +1,29 @@
+
+<div class="container">
+  <div class="ticket">
+    <div class="image">
+      <img src="../../../assets/brand/logo.png"  alt="شعار كلية الظباط الاحتياط">
+    </div>
+    <hr>
+      <div class="number"> <p style="direction: rtl;font-size: 20px;" > رقم الكشف:</p> {{next}}  </div>
+    <hr>
+    <div class="info">
+      <div class="name">الاسم/&nbsp;<span>{{name}}</span></div>
+      <div class="clinic">العيادة/&nbsp;<span>{{clinicName}}</span></div>
+      <div class="date">السن/&nbsp;<span style="font-size: 17px;">{{age}}</span></div>
+
+      <div class="date">التاريخ/ &nbsp;<span style="font-size: 17px;">{{date}}</span></div>
+    </div>
+    <hr>
+    <div class="nameOfuser" style="width: 40%;text-align: left;margin: auto;">
+      <span class="nameofresp" >
+        {{username}}
+      </span>
+  </div>
+  <button class="btn btn-success button" #ref1 routerLink="/reception">الرجوع للصفحة الاستقبال</button>
+  <button class="btn btn-primary button" #ref2 (click)="print()" id="ff">طباعة</button>
+  </div>
+
+
+</div>
+

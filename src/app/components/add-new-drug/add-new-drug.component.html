@@ -1,0 +1,32 @@
+<app-exit></app-exit>
+<div class="container">
+
+  <div class="logo">
+    <img src="../../../assets/brand/logo.png" alt="شعار كلية الضباط الاحتياط">
+  </div>
+
+  <div class="addDrug">
+    <form action="" #addDrug="ngForm" class="form-group">
+
+      <div>
+      <label for=""> اسم الدواء </label>
+      <input type="text first" required #drugName="ngModel" ngModel name="drugName" [(ngModel)]="drug.name">
+      <label for=""> النوع </label>
+      <select name="" id="" required   #drugCategory="ngModel" ngModel name="drugCategory"  [(ngModel)]="drug.category">
+        <option value="1"  >دواء شرب</option>
+        <option value="2" >اقراص</option>
+        <option value="3" >حقن</option>
+        <option value="4" > مرهم </option>
+      </select>
+
+      </div>
+
+      <label for=""> الكمية  </label>
+      <input  type="number" [(ngModel)]="drug.amount" drugAmount="ngModel" ngModel name="drugAmount"  class="last amount" required>
+
+      <button class="btn btn-success add" [disabled]="addDrug.invalid" (click)="addNewDrug()" > اضافة الدواء </button>
+
+    </form>
+
+  </div>
+</div>

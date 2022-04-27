@@ -1,0 +1,82 @@
+
+<div class="container">
+  <div class="log">
+    <img src="../../../assets/brand/logo.png" alt="">
+  </div>
+  <h2 class="text-center banner" style="margin: 30px;" >تاريخ زيارة كل عيادة </h2>
+
+  <table class="table ">
+    <thead>
+
+        <th scope="col"> القلب</th>
+        <th scope="col"> الرمد </th>
+        <th scope="col"> الانف والاذن</th>
+        <th scope="col"> الجراحة العامة</th>
+        <th scope="col">  الباطنة</th>
+        <th scope="col">  الاسنان</th>
+        <th scope="col">  ومخ واعصاب</th>
+        <th scope="col"> المسالك </th>
+        <th scope="col">  العظام </th>
+        <th scope="col">  العلاج الطبيعي </th>
+    </thead>
+    <tbody>
+      <th>
+        <tr *ngFor="let i of arr[0];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+
+      <th>
+        <tr *ngFor="let i of arr[1];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+
+      <th>
+        <tr *ngFor="let i of arr[2];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+
+      <th>
+        <tr *ngFor="let i of arr[3];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+      <th>
+        <tr *ngFor="let i of arr[4];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+      <th>
+        <tr *ngFor="let i of arr[5];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+      <th>
+        <tr *ngFor="let i of arr[6];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+      <th>
+        <tr *ngFor="let i of arr[7];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+
+      <th>
+        <tr *ngFor="let i of arr[8];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+      <th>
+        <tr *ngFor="let i of arr[9];let in=index" >
+          <td > {{i}}</td>
+        </tr>
+      </th>
+    </tbody>
+  </table>
+
+  <button class="btn btn-success" style="display: block;
+  margin: 5px auto 20px;" routerLink="/reception"> الرجوع الي صفحة الاستقبال</button>
+</div>

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Nozom\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Nozom\\.nuget\\packages"
+    ]
+  }
+}
